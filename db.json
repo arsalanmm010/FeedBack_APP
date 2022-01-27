@@ -19,6 +19,11 @@
       "text": "Not good enough",
       "rating": 5,
       "id": 5
+    },
+    {
+      "text": "Not a good movie",
+      "rating": 5,
+      "id": 6
     }
   ]
 }
