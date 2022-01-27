@@ -34,11 +34,17 @@ export const FeedbackProvider = ({children}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
+        
             body: JSON.stringify(newFeedback),
-       })
+        })
+
+        const data = await response.json()
+
+        data()
 
         newFeedback.id = uuidv4()
         setFeedback([newFeedback, ...feedback])
+
     }
 
     const deleteFeedback = async (id) => {
