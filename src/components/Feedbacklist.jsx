@@ -1,15 +1,17 @@
 import {motion, AnimatePresence} from 'framer-motion'
 import Feedbackitem from "./Feedbackitem";
 import {useContext} from 'react'
+import Spinner from './Shared/Spinner'
 import Context from '../Context/Context'
 
 function Feedbacklist() {
-    const {feedback} = useContext(Context)
+    const {feedback, isLoading} = useContext(Context)
 
-    if(!feedback || feedback.length === 0){
+    if(!isLoading && (!feedback || feedback.length === 0)){
         return <div>List empty</div>
     }
-  return (
+
+    return isLoading ? (<Spinner />): (
   <div className="feedback-list">
       <AnimatePresence>
       {feedback.map((item) => (
